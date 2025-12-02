@@ -23,7 +23,7 @@
       <!-- Header -->
       <header id="header" class="alt style2">
         <a href="index.html" class="logo"
-          ><img src="images/logo.png" alt="Logo" class="logo-img" />
+          ><img src="images/logo_small.png" alt="Logo" class="logo-img" />
           <strong>kleine</strong> <span>musikschule Karlsruhe</span></a
         >
         <nav>
@@ -174,90 +174,6 @@
                 <li><input type="reset" value="Clear" /></li>
               </ul>
             </form>
-
-            <script>
-              async function shareLocation() {
-                const locationInput = document.getElementById("location");
-                const coordinatesInput = document.getElementById("coordinates");
-                const statusDiv = document.getElementById("locationStatus");
-                const button = event.target;
-
-                if (!navigator.geolocation) {
-                  statusDiv.textContent =
-                    "❌ Geolocation wird von deinem Browser nicht unterstützt.";
-                  statusDiv.style.color = "#ff6b6b";
-                  return;
-                }
-
-                const originalText = button.textContent;
-                button.textContent = "⏳ Ermittle Standort...";
-                button.disabled = true;
-                statusDiv.textContent = "";
-
-                navigator.geolocation.getCurrentPosition(
-                  async function (position) {
-                    const lat = position.coords.latitude;
-                    const lon = position.coords.longitude;
-
-                    try {
-                      // Get address from coordinates
-                      const response = await fetch(
-                        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=18&addressdetails=1`
-                      );
-                      const data = await response.json();
-                      const address =
-                        data.display_name ||
-                        `${lat.toFixed(6)}, ${lon.toFixed(6)}`;
-
-                      locationInput.value = address;
-                      coordinatesInput.value = `${lat},${lon}`;
-                      statusDiv.textContent =
-                        "✓ Standort erfolgreich erfasst und wird mit deiner Nachricht gesendet";
-                      statusDiv.style.color = "#9bf1ff";
-                      button.textContent = "✓ Standort geteilt";
-                      button.disabled = false;
-                    } catch (error) {
-                      locationInput.value = `Koordinaten: ${lat.toFixed(
-                        6
-                      )}, ${lon.toFixed(6)}`;
-                      coordinatesInput.value = `${lat},${lon}`;
-                      statusDiv.textContent = "✓ Koordinaten erfasst";
-                      statusDiv.style.color = "#9bf1ff";
-                      button.textContent = "✓ Standort geteilt";
-                      button.disabled = false;
-                    }
-                  },
-                  function (error) {
-                    let errorMessage = "❌ ";
-                    switch (error.code) {
-                      case error.PERMISSION_DENIED:
-                        errorMessage +=
-                          "Standortzugriff verweigert. Bitte erlaube den Zugriff in deinen Browser-Einstellungen.";
-                        break;
-                      case error.POSITION_UNAVAILABLE:
-                        errorMessage +=
-                          "Standort konnte nicht ermittelt werden.";
-                        break;
-                      case error.TIMEOUT:
-                        errorMessage +=
-                          "Zeitüberschreitung bei der Standortermittlung.";
-                        break;
-                      default:
-                        errorMessage += "Fehler beim Ermitteln des Standorts.";
-                    }
-                    statusDiv.textContent = errorMessage;
-                    statusDiv.style.color = "#ff6b6b";
-                    button.textContent = originalText;
-                    button.disabled = false;
-                  },
-                  {
-                    enableHighAccuracy: true,
-                    timeout: 10000,
-                    maximumAge: 0,
-                  }
-                );
-              }
-            </script>
           </section>
           <section class="split">
             <section>
@@ -334,5 +250,87 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+      async function shareLocation() {
+        const locationInput = document.getElementById("location");
+        const coordinatesInput = document.getElementById("coordinates");
+        const statusDiv = document.getElementById("locationStatus");
+        const button = event.target;
+
+        if (!navigator.geolocation) {
+          statusDiv.textContent =
+            "❌ Geolocation wird von deinem Browser nicht unterstützt.";
+          statusDiv.style.color = "#ff6b6b";
+          return;
+        }
+
+        const originalText = button.textContent;
+        button.textContent = "⏳ Ermittle Standort...";
+        button.disabled = true;
+        statusDiv.textContent = "";
+
+        navigator.geolocation.getCurrentPosition(
+          async function (position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+
+            try {
+              // Get address from coordinates
+              const response = await fetch(
+                `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=18&addressdetails=1`
+              );
+              const data = await response.json();
+              const address =
+                data.display_name || `${lat.toFixed(6)}, ${lon.toFixed(6)}`;
+
+              locationInput.value = address;
+              coordinatesInput.value = `${lat},${lon}`;
+              statusDiv.textContent =
+                "✓ Standort erfolgreich erfasst und wird mit deiner Nachricht gesendet";
+              statusDiv.style.color = "#9bf1ff";
+              button.textContent = "✓ Standort geteilt";
+              button.disabled = false;
+            } catch (error) {
+              locationInput.value = `Koordinaten: ${lat.toFixed(
+                6
+              )}, ${lon.toFixed(6)}`;
+              coordinatesInput.value = `${lat},${lon}`;
+              statusDiv.textContent = "✓ Koordinaten erfasst";
+              statusDiv.style.color = "#9bf1ff";
+              button.textContent = "✓ Standort geteilt";
+              button.disabled = false;
+            }
+          },
+          function (error) {
+            let errorMessage = "❌ ";
+            switch (error.code) {
+              case error.PERMISSION_DENIED:
+                errorMessage +=
+                  "Standortzugriff verweigert. Bitte erlaube den Zugriff in deinen Browser-Einstellungen.";
+                break;
+              case error.POSITION_UNAVAILABLE:
+                errorMessage += "Standort konnte nicht ermittelt werden.";
+                break;
+              case error.TIMEOUT:
+                errorMessage +=
+                  "Zeitüberschreitung bei der Standortermittlung.";
+                break;
+              default:
+                errorMessage += "Fehler beim Ermitteln des Standorts.";
+            }
+            statusDiv.textContent = errorMessage;
+            statusDiv.style.color = "#ff6b6b";
+            button.textContent = originalText;
+            button.disabled = false;
+          },
+          {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0,
+          }
+        );
+      }
+    </script>
   </body>
 </html>

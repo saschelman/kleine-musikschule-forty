@@ -30,14 +30,14 @@
     <link
       rel="preload"
       as="image"
-      href="images/logo.png"
+      href="images/logo_small.png"
       fetchpriority="high"
     />
     <link rel="preload" as="style" href="assets/css/main.css" />
 
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="icon" href="images/logo.png" />
-    <link rel="apple-touch-icon" href="images/logo.png" />
+    <link rel="icon" href="images/logo_small.png" />
+    <link rel="apple-touch-icon" href="images/logo_small.png" />
     <link rel="manifest" href="manifest.json" />
     <noscript
       ><link rel="stylesheet" href="assets/css/noscript.css"
@@ -54,7 +54,7 @@
     />
     <meta
       property="og:image"
-      content="https://kleine-musikschule.de/images/logo.png"
+      content="https://kleine-musikschule.de/images/logo_small.png"
     />
     <meta property="og:url" content="https://kleine-musikschule.de/" />
     <meta property="og:type" content="website" />
@@ -72,7 +72,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://kleine-musikschule.de/images/logo.png"
+      content="https://kleine-musikschule.de/images/logo_small.png"
     />
 
     <script type="application/ld+json">
@@ -87,7 +87,7 @@
           "postalCode": "76313",
           "addressCountry": "DE"
         },
-        "logo": "https://kleine-musikschule.de/images/logo.png",
+        "logo": "https://kleine-musikschule.de/images/logo_small.png",
         "telephone": "+49 15208905901",
         "url": "https://kleine-musikschule.de/",
         "priceRange": "€€",
@@ -216,7 +216,7 @@
       <!-- Header -->
       <header id="header" class="alt">
         <a href="index.html" class="logo"
-          ><img src="images/logo.png" alt="Logo" class="logo-img" />
+          ><img src="images/logo_small.png" alt="Logo" class="logo-img" />
           <strong>kleine</strong> <span>musikschule Karlsruhe</span></a
         >
         <nav>
@@ -260,9 +260,9 @@
         <!-- One -->
         <section id="one" class="tiles">
           <article>
-            <span class="image">
-              <img src="images/IMG_2503.jpg" alt="" />
-            </span>
+            <video class="tile-video" muted loop playsinline>
+              <source src="vids/überuns.mp4" type="video/mp4" />
+            </video>
             <header class="major">
               <h3>
                 <a href="überuns.html" class="link">Über uns</a>
@@ -271,18 +271,18 @@
             </header>
           </article>
           <article>
-            <span class="image">
-              <img src="images/lehre.jpg" alt="Lehre" />
-            </span>
+            <video class="tile-video" muted loop playsinline>
+              <source src="vids/lehre.mp4" type="video/mp4" />
+            </video>
             <header class="major">
               <h3><a href="lehre.html" class="link">Lehre</a></h3>
               <p>So machen wir das!</p>
             </header>
           </article>
           <article>
-            <span class="image">
-              <img src="images/instrummente.jpg" alt="Instrumente" />
-            </span>
+            <video class="tile-video" muted loop playsinline>
+              <source src="vids/instrummente.mp4" type="video/mp4" />
+            </video>
             <header class="major">
               <h3>
                 <a href="instrumente.html" class="link">Instrumente</a>
@@ -291,27 +291,27 @@
             </header>
           </article>
           <article>
-            <span class="image">
-              <img src="images/preise.jpg" alt="Preise" />
-            </span>
+            <video class="tile-video" muted loop playsinline>
+              <source src="vids/prices.mp4" type="video/mp4" />
+            </video>
             <header class="major">
               <h3><a href="preise.html" class="link">Preise</a></h3>
               <p>Faire Preise für alle!</p>
             </header>
           </article>
           <article>
-            <span class="image">
-              <img src="images/faq.jpg" alt="FAQ" />
-            </span>
+            <video class="tile-video" muted loop playsinline>
+              <source src="vids/faq.mp4" type="video/mp4" />
+            </video>
             <header class="major">
               <h3><a href="faq.html" class="link">FAQ</a></h3>
               <p>für Große und kleinen Fragen!</p>
             </header>
           </article>
           <article>
-            <span class="image">
-              <img src="images/kontakt.jpg" alt="Kontakt" />
-            </span>
+            <video class="tile-video" muted loop playsinline>
+              <source src="vids/kontakt.mp4" type="video/mp4" />
+            </video>
             <header class="major">
               <h3>
                 <a href="kontakt.html" class="link">Kontakt</a>
@@ -328,17 +328,19 @@
               <h2>10 Tipps zum Dranbleiben</h2>
             </header>
             <p>
-              Nullam et orci eu lorem consequat tincidunt vivamus et sagittis
-              libero. Mauris aliquet magna magna sed nunc rhoncus pharetra.
-              Pellentesque condimentum sem. In efficitur ligula tate urna.
-              Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor.
-              Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
-              libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra
-              et feugiat tempus.
+              Du hast voller Motivation mit dem Musiklernen angefangen, aber
+              nach ein paar Wochen lässt die Begeisterung nach? Das ist völlig
+              normal! Musiklernen ist ein Marathon, kein Sprint. Mit unseren
+              zehn bewährten Strategien bleibst du langfristig motiviert,
+              überwindest Plateaus und erreichst deine musikalischen Ziele. Von
+              der richtigen Übungsroutine bis zu mentalen Tricks – entdecke, wie
+              du dauerhaft am Ball bleibst und Spaß an der Musik behältst!
             </p>
             <ul class="actions">
               <li>
-                <a href="landing.html" class="button next">Zum Beitrag</a>
+                <a href="blog/10-tipps-zum-dranbleiben.html" class="button next"
+                  >Zum Beitrag</a
+                >
               </li>
             </ul>
           </div>
@@ -346,20 +348,29 @@
         <section id="two">
           <div class="inner">
             <header class="major">
-              <h2>Welches Instumment soll passt für mich?</h2>
+              <h2>Welches Instrument passt zu mir am besten? – Quiz</h2>
             </header>
             <p>
-              Nullam et orci eu lorem consequat tincidunt vivamus et sagittis
-              libero. Mauris aliquet magna magna sed nunc rhoncus pharetra.
-              Pellentesque condimentum sem. In efficitur ligula tate urna.
-              Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor.
-              Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
-              libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra
-              et feugiat tempus.
+              Beantworte 10 kurze Fragen und erhalte eine klare Empfehlung –
+              Gitarre, Klavier, Ukulele, Schlagzeug oder Bass – passend zu
+              deinem Geschmack, Zielen und Alltag.
             </p>
             <ul class="actions">
               <li>
-                <a href="landing.html" class="button next">Zum Beitrag</a>
+                <a
+                  href="blog/welches-instrument-passt-zu-mir.html"
+                  class="button next"
+                  >Quiz starten</a
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section id="two">
+          <div class="inner">
+            <ul class="actions" style="justify-content: center">
+              <li>
+                <a href="blog.html" class="button">Zu allen Beiträgen</a>
               </li>
             </ul>
           </div>
@@ -404,6 +415,50 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- Video hover play script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const articles = document.querySelectorAll(".tiles article");
+
+        articles.forEach((article) => {
+          const video = article.querySelector(".tile-video");
+          if (video) {
+            article.addEventListener("mouseenter", function () {
+              video.play();
+            });
+
+            article.addEventListener("mouseleave", function () {
+              video.pause();
+              video.currentTime = 0;
+            });
+          }
+        });
+      });
+    </script>
+
+    <style>
+      .tiles article .tile-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: 0;
+        opacity: 0.4;
+      }
+
+      .tiles article header {
+        position: relative;
+        z-index: 3;
+      }
+
+      .tiles article:before {
+        z-index: 2;
+      }
+    </style>
 
     <!-- Service Worker Registration for PWA -->
     <script>

@@ -17,10 +17,10 @@
   background-size: cover;
   border-bottom: 0 !important;
   cursor: default;
-  height: 60vh;
+  height: 25vh;
   margin-bottom: -3.25em;
-  max-height: 32em;
-  min-height: 22em;
+  max-height: 12em;
+  min-height: 10em;
   position: relative;
   top: -3.25em;
 
@@ -62,7 +62,7 @@
       display: none;
 
       img {
-        max-height: 400px;
+        max-height: 150px;
         object-fit: cover;
         object-position: center;
       }
@@ -104,9 +104,9 @@
   }
 
   &.major {
-    height: 75vh;
-    min-height: 30em;
-    max-height: 50em;
+    height: 35vh;
+    min-height: 18em;
+    max-height: 22em;
 
     &.alt {
       opacity: 0.75;
